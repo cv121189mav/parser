@@ -1,7 +1,9 @@
 import sqlalchemy as db
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import create_engine
 
 from settings import DATABASE_URL
+
 
 Base = declarative_base()
 
@@ -15,7 +17,6 @@ class Category(Base):
 
 
 if __name__ == '__main__':
-    from sqlalchemy import create_engine
 
     engine = create_engine(DATABASE_URL)
     Base.metadata.create_all(engine)
